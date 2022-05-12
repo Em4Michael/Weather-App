@@ -1,0 +1,274 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+:root {
+  --dark-color:17%;
+  --light-color:17%;
+  --white-color:10%;
+  --primary-color-hue: 252;
+  --color-white: hsl(252, 30%, var(--white-color));
+  --color-light: hsl(252, 30%, var(--light-color));
+  --color-gray: hsl(252, 15%, 65%);
+  --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
+  --color-secondary: hsl(252, 100%, 90%);
+  --color-success: hsl(120, 95%, 17%);
+  --color-danger: hsl(0, 95%, 65%);
+  --color-dark: hsl(252, 30%, var(--dark-color));
+  --color-black: hsl(252, 30%, 10%);
+}
+
+html {
+    font-size: 80%;
+  }
+  
+  body {
+    /* background-color: #151638; */
+    background-color: var(--color-light);
+    overflow-x: hidden;
+    color: #fff;
+    margin: auto;
+  
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: .8rem;
+    font-family: "Poppins", sans-serif;
+  
+  }
+
+/*   .container {
+    width: 96%;
+    margin: auto;
+  
+  }
+   */
+  .row {
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+   
+    text-align: center;
+  
+  }
+  
+  .row.center {
+    justify-content: center;
+  }
+  
+  .Box{
+     /*  background-color: #0b0d1e; */
+     background-color: var(--color-white);
+      width: 20rem;
+      height: 45rem;
+     border-radius: 35px;
+     padding: 10px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     align-items: center;
+     
+  }
+  .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .Menu{
+    padding: 1px;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.186);
+    
+  
+  
+  }
+  span i{
+      color: rgb(255, 255, 255);
+      font-size: 2rem;
+      
+  }
+  .menu span i{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    padding-top: 7px;
+
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.menu h2{
+  padding-top: 2px;
+}
+.menu .title span i{
+  font-size: 1rem;
+  color: rgb(255, 0, 0);
+}
+.main{
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.toggle{
+  font-size: 2rem;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+  width: 50px;
+  height: 20px;
+}
+.switch{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 40px;
+  margin: 0 10px;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+ 
+}
+.switch:before{
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: #000;
+  display: block;
+  border-radius: 50%;
+}
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+}
+.icon {
+ 
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.mid img{
+  width: 7rem;
+ 
+}
+.mid{
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+  gap: 3rem;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.search-bar {
+  background-color: rgba(255, 255, 255, 0.192);
+  padding: 10px;
+  border-radius: 15px;
+  width: 90%;
+ margin-left: auto;
+ margin-right: auto;
+ display: flex;
+ margin-top: 1rem;
+ 
+}
+
+.search-bar input[type="text"] {
+  background: transparent;
+  width: 80%;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: rgb(255, 255, 255);
+  
+}
+button{
+  background-color: rgba(255, 255, 255, 0);
+}
+button h5{
+  color: white;
+  cursor: pointer;
+}
+.value {
+  color: rgb(76, 109, 254);
+  position: absolute;
+  top: -30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  line-height: 20px;
+}
+.center{
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 7.5rem;
+  
+}
+h2{
+  font-size: 1.5rem;
+  position: relative
+}
+h1{
+  font-size: 3rem;
+  position: relative
+}
+.temp{
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  margin-left: 3rem;
+  margin-top: 2.5rem;
+}
+.conditions img{
+  width: 30px;
+  margin-top: 5rem;
+  
+}
+.conditions{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  
+}
+.icon-flex{
+  background-color: #ffffff40;
+  width: 16rem;
+  height: 3rem;
+ border-radius: 25px;
+ padding-top: 10px;
+  display: flex;
+ justify-content: center;
+ gap: 30px;
+margin-left:1.3rem;
+ margin-top: 3rem;
+ 
+}
+.icon-flex span i{
+font-size: 1.1rem;
+}
