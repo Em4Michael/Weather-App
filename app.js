@@ -5,6 +5,7 @@
     updateApp = (city) => {
         
         document.querySelector('#cityname').innerText = city.name
+        
         const iconName = city.weather[0].icon;
         const Icon = `http://openweathermap.org/img/wn/${iconName}@2x.png`
         
@@ -76,9 +77,9 @@
            
         }
     }
-    const cityName = document.querySelector('#buttonClick');
+    const cityName = document.querySelector('.Search');
     const newName = document.querySelector('#cityInput');
-    cityName.addEventListener('click', search=>{
+    cityName.addEventListener('submit', (search)=>{
     search.preventDefault();
     const citySearch = newName.value.trim();
    //console.log(citySearch);

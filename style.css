@@ -200,7 +200,7 @@ border-radius: 34px;
  
 }
 
-.search-bar input[type="text"] {
+.search-bar form input[type="text"] {
   background: transparent;
   width: 80%;
   margin-left: 1rem;
