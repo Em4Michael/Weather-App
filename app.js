@@ -102,7 +102,6 @@ const GetCity = async (city) => {
 
     const data = await res.json();
     return data;
-   //console.log(data);
 }
 
 
