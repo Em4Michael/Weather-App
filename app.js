@@ -1,29 +1,29 @@
 
-   
-    //console.log(newName)
 
-    updateApp = (city) => {
-        
-        document.querySelector('#cityname').innerText = city.name
-        
-        const iconName = city.weather[0].icon;
-        const Icon = `http://openweathermap.org/img/wn/${iconName}@2x.png`
-        
-        
-       const covert=(K)=>{
-           C = Math.round(K-273.15);
-           return C
-       }
+//console.log(newName)
 
-       const time = (icon) => {
-           if(icon.includes('d')){
-               return true;
-           }    else {
-               return false;
-           }
-       }
+updateApp = (city) => {
 
-        document.getElementById("pp").innerHTML   = `
+    document.querySelector('#cityname').innerText = city.name
+
+    const iconName = city.weather[0].icon;
+    const Icon = `http://openweathermap.org/img/wn/${iconName}@2x.png`
+
+
+    const covert = (K) => {
+        C = Math.round(K - 273.15);
+        return C
+    }
+
+    const time = (icon) => {
+        if (icon.includes('d')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    document.getElementById("pp").innerHTML = `
         <div class="mid">
 
         <div class="image"><img src="${Icon}" alt="" width="200rem"></div>
@@ -64,38 +64,38 @@
     </div>
        
         `
-        var root = document.querySelector(':root');
-        if(time(iconName)){
-           
-                root.style.setProperty('--light-color', '65%');
-                root.style.setProperty('--white-color', '30%');
-               
-            
-        }    else {
-            root.style.setProperty('--light-color', '0%');
-            root.style.setProperty('--white-color', '10%');
-           
-        }
+    var root = document.querySelector(':root');
+    if (time(iconName)) {
+
+        root.style.setProperty('--light-color', '65%');
+        root.style.setProperty('--white-color', '30%');
+
+
+    } else {
+        root.style.setProperty('--light-color', '0%');
+        root.style.setProperty('--white-color', '10%');
+
     }
-    const cityName = document.querySelector('.Search');
-    const newName = document.querySelector('#cityInput');
-    cityName.addEventListener('submit', (search)=>{
+}
+const cityName = document.querySelector('.Search');
+const newName = document.querySelector('#cityInput');
+cityName.addEventListener('submit', (search) => {
     search.preventDefault();
     const citySearch = newName.value.trim();
-   //console.log(citySearch);
+    //console.log(citySearch);
 
-   GetCity(citySearch)
-   .then((data)=>{
-       updateApp(data);
-   })
-   .catch((error)=>{console.log(error)})
-   
+    GetCity(citySearch)
+        .then((data) => {
+            updateApp(data);
+        })
+        .catch((error) => { console.log(error) })
+
 })
- 
+
 
 const GetCity = async (city) => {
     const link = 'https://api.openweathermap.org/data/2.5/weather'
-    const key ='249d2b45b68604e242df127efa28caa5'
+    const key = '249d2b45b68604e242df127efa28caa5'
     const query = `?q=${city}&appid=${key}`;
 
     const res = await fetch(link + query);
